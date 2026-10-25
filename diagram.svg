@@ -1,0 +1,364 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4680 1720" width="4680" height="1720">
+
+    <defs>
+      <linearGradient id="headerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#0F172A" />
+        <stop offset="50%" stop-color="#1E293B" />
+        <stop offset="100%" stop-color="#334155" />
+      </linearGradient>
+
+      <linearGradient id="phaseGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stop-color="#F1F5F9" />
+        <stop offset="100%" stop-color="#E2E8F0" />
+      </linearGradient>
+      
+      <filter id="shadow" x="-8%" y="-15%" width="120%" height="140%">
+        <feDropShadow dx="1" dy="3" stdDeviation="3" flood-opacity="0.12" />
+      </filter>
+
+      <filter id="nodeShadow" x="-10%" y="-20%" width="125%" height="150%">
+        <feDropShadow dx="1" dy="2" stdDeviation="2.5" flood-opacity="0.08" />
+      </filter>
+
+      <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+        <path d="M 0 1.5 L 10 5 L 0 8.5 z" fill="#334155" />
+      </marker>
+      
+      <marker id="arrow-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+        <path d="M 0 1.5 L 10 5 L 0 8.5 z" fill="#16A34A" />
+      </marker>
+      
+      <marker id="arrow-teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+        <path d="M 0 1.5 L 10 5 L 0 8.5 z" fill="#0D9488" />
+      </marker>
+
+      <marker id="arrow-amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+        <path d="M 0 1.5 L 10 5 L 0 8.5 z" fill="#D97706" />
+      </marker>
+
+      <marker id="arrow-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+        <path d="M 0 1.5 L 10 5 L 0 8.5 z" fill="#2563EB" />
+      </marker>
+
+      <marker id="arrow-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+        <path d="M 0 1.5 L 10 5 L 0 8.5 z" fill="#DC2626" />
+      </marker>
+
+      <marker id="arrow-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+        <path d="M 0 1.5 L 10 5 L 0 8.5 z" fill="#7C3AED" />
+      </marker>
+    </defs>
+    
+    <style>
+      text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+      .title { font-size: 24px; font-weight: 800; fill: #FFFFFF; letter-spacing: 0.5px; }
+      .subtitle { font-size: 14px; font-weight: 400; fill: #94A3B8; }
+      .lane-title { font-size: 15px; font-weight: 700; fill: #FFFFFF; }
+      .lane-sub { font-size: 11px; font-weight: 500; fill: rgba(255,255,255,0.85); }
+      .sublane-title { font-size: 13px; font-weight: 700; fill: #1E293B; }
+      .sublane-sub { font-size: 10px; font-weight: 500; fill: #64748B; }
+      .phase-text { font-size: 11px; font-weight: 700; fill: #475569; letter-spacing: 0.5px; text-anchor: middle; }
+      .node-text { font-size: 14px; font-weight: 700; fill: #0F172A; text-anchor: middle; }
+      .node-subtext { font-size: 11px; font-weight: 500; fill: #475569; text-anchor: middle; }
+      .decision-text { font-size: 13px; font-weight: 800; fill: #0F172A; text-anchor: middle; }
+      .edge-label { font-size: 11px; font-weight: 600; fill: #334155; text-anchor: middle; }
+      .edge-label-yes { font-size: 12px; font-weight: 800; fill: #16A34A; text-anchor: middle; }
+      .edge-label-no { font-size: 12px; font-weight: 800; fill: #DC2626; text-anchor: middle; }
+    </style>
+    
+<rect width="4680" height="1720" fill="#F8FAFC" />
+<rect x="0" y="0" width="4680" height="80" fill="url(#headerGrad)" />
+<text x="40" y="38" class="title">Ciclo de vide OT - 2026</text>
+<text x="40" y="62" class="subtitle">Diagrama de procesos: Emisión de OT, Muestreo y Reporte de Resultados</text>
+<rect x="30" y="80" width="4620" height="40" fill="url(#phaseGrad)" stroke="#CBD5E1" stroke-width="1.2" />
+<rect x="30" y="80" width="390" height="40" fill="#334155" />
+<text x="225" y="105" style="font-size:12px;font-weight:700;fill:#FFFFFF;letter-spacing:1px;text-anchor:middle">CARRILES / ROLES (SUBGRAPHS)</text>
+<line x1="420" y1="80" x2="420" y2="1660" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="3,3" />
+<text x="665.0" y="105" class="phase-text">FASE 1: AUTORIZACIÓN Y APERTURA DE OT</text>
+<line x1="910" y1="80" x2="910" y2="1660" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="3,3" />
+<text x="1100.0" y="105" class="phase-text">FASE 2: EVALUACIÓN DE DISCIPLINA</text>
+<line x1="1290" y1="80" x2="1290" y2="1660" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="3,3" />
+<text x="1555.0" y="105" class="phase-text">FASE 3: MUESTREO EN CAMPO</text>
+<line x1="1820" y1="80" x2="1820" y2="1660" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="3,3" />
+<text x="1985.0" y="105" class="phase-text">FASE 4: ENVÍO Y REVISIÓN INTERNA</text>
+<line x1="2150" y1="80" x2="2150" y2="1660" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="3,3" />
+<text x="2575.0" y="105" class="phase-text">FASE 5: LABORATORIO CENTRAL MX</text>
+<line x1="3000" y1="80" x2="3000" y2="1660" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="3,3" />
+<text x="3480.0" y="105" class="phase-text">FASE 6: REVISIÓN DE RESULTADOS Y GENERACIÓN PDF</text>
+<line x1="3960" y1="80" x2="3960" y2="1660" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="3,3" />
+<text x="4290.0" y="105" class="phase-text">FASE 7: CAPTURA LOCAL, IMPRESIÓN Y CIERRE</text>
+<rect x="30" y="120" width="4620" height="120" fill="#FFFBEB" stroke="#CBD5E1" stroke-width="1.2" />
+<rect x="30" y="120" width="390" height="120" fill="#D97706" />
+<text x="225" y="174.0" class="lane-title" text-anchor="middle">Cliente</text>
+<text x="225" y="194.0" class="lane-sub" text-anchor="middle">[Cliente]</text>
+<rect x="30" y="240" width="4620" height="130" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.2" />
+<rect x="30" y="240" width="390" height="130" fill="#2563EB" />
+<text x="225" y="299.0" class="lane-title" text-anchor="middle">Atención a Clientes</text>
+<text x="225" y="319.0" class="lane-sub" text-anchor="middle">[AtencionClientes]</text>
+<rect x="30" y="370" width="4620" height="260" fill="#F0FDFA" stroke="#CBD5E1" stroke-width="1.2" />
+<rect x="30" y="370" width="210" height="260" fill="#0D9488" />
+<text x="135" y="494.0" class="lane-title" text-anchor="middle">Operativo Higiene</text>
+<text x="135" y="514.0" class="lane-sub" text-anchor="middle">[OpeHig]</text>
+<rect x="240" y="370" width="4410" height="130" fill="#F0FDFA" stroke="#CBD5E1" stroke-width="1" />
+<rect x="240" y="370" width="180" height="130" fill="#E2E8F0" stroke="#CBD5E1" stroke-width="1" />
+<text x="330" y="430.0" class="sublane-title" text-anchor="middle">Técnico</text>
+<text x="330" y="448.0" class="sublane-sub" text-anchor="middle">[TecHig]</text>
+<rect x="240" y="500" width="4410" height="130" fill="#CCFBF1" stroke="#CBD5E1" stroke-width="1" />
+<rect x="240" y="500" width="180" height="130" fill="#E2E8F0" stroke="#CBD5E1" stroke-width="1" />
+<text x="330" y="560.0" class="sublane-title" text-anchor="middle">Coordinador Higiene</text>
+<text x="330" y="578.0" class="sublane-sub" text-anchor="middle">[CorHig]</text>
+<rect x="30" y="630" width="4620" height="120" fill="#F0FDF4" stroke="#CBD5E1" stroke-width="1.2" />
+<rect x="30" y="630" width="390" height="120" fill="#059669" />
+<text x="225" y="684.0" class="lane-title" text-anchor="middle">Laboratorio Higiene MX</text>
+<text x="225" y="704.0" class="lane-sub" text-anchor="middle">[LabHigMX]</text>
+<rect x="30" y="750" width="4620" height="130" fill="#FAF5FF" stroke="#CBD5E1" stroke-width="1.2" />
+<rect x="30" y="750" width="390" height="130" fill="#7C3AED" />
+<text x="225" y="809.0" class="lane-title" text-anchor="middle">Revisión y Captura Higiene MX</text>
+<text x="225" y="829.0" class="lane-sub" text-anchor="middle">[CaptHigMX]</text>
+<rect x="30" y="880" width="4620" height="260" fill="#F0FDF4" stroke="#CBD5E1" stroke-width="1.2" />
+<rect x="30" y="880" width="210" height="260" fill="#16A34A" />
+<text x="135" y="1004.0" class="lane-title" text-anchor="middle">Operativo Ecología</text>
+<text x="135" y="1024.0" class="lane-sub" text-anchor="middle">[OpeEco]</text>
+<rect x="240" y="880" width="4410" height="130" fill="#F0FDF4" stroke="#CBD5E1" stroke-width="1" />
+<rect x="240" y="880" width="180" height="130" fill="#E2E8F0" stroke="#CBD5E1" stroke-width="1" />
+<text x="330" y="940.0" class="sublane-title" text-anchor="middle">Técnico</text>
+<text x="330" y="958.0" class="sublane-sub" text-anchor="middle">[TecEco]</text>
+<rect x="240" y="1010" width="4410" height="130" fill="#DCFCE7" stroke="#CBD5E1" stroke-width="1" />
+<rect x="240" y="1010" width="180" height="130" fill="#E2E8F0" stroke="#CBD5E1" stroke-width="1" />
+<text x="330" y="1070.0" class="sublane-title" text-anchor="middle">Coordinador Ecología</text>
+<text x="330" y="1088.0" class="sublane-sub" text-anchor="middle">[CorEco]</text>
+<rect x="30" y="1140" width="4620" height="120" fill="#ECFDF5" stroke="#CBD5E1" stroke-width="1.2" />
+<rect x="30" y="1140" width="390" height="120" fill="#10B981" />
+<text x="225" y="1194.0" class="lane-title" text-anchor="middle">Laboratorio Ecología MX</text>
+<text x="225" y="1214.0" class="lane-sub" text-anchor="middle">[LabEcoMX]</text>
+<rect x="30" y="1260" width="4620" height="130" fill="#FAF5FF" stroke="#CBD5E1" stroke-width="1.2" />
+<rect x="30" y="1260" width="390" height="130" fill="#9333EA" />
+<text x="225" y="1319.0" class="lane-title" text-anchor="middle">Revisión y Captura Ecología MX</text>
+<text x="225" y="1339.0" class="lane-sub" text-anchor="middle">[CaptEcoMX]</text>
+<rect x="30" y="1390" width="4620" height="130" fill="#EFF6FF" stroke="#CBD5E1" stroke-width="1.2" />
+<rect x="30" y="1390" width="390" height="130" fill="#1D4ED8" />
+<text x="225" y="1449.0" class="lane-title" text-anchor="middle">Captura e Impresión</text>
+<text x="225" y="1469.0" class="lane-sub" text-anchor="middle">[CapLoc]</text>
+<rect x="30" y="1520" width="4620" height="120" fill="#FFF1F2" stroke="#CBD5E1" stroke-width="1.2" />
+<rect x="30" y="1520" width="390" height="120" fill="#E11D48" />
+<text x="225" y="1574.0" class="lane-title" text-anchor="middle">Atn Ctes - Cobranza</text>
+<text x="225" y="1594.0" class="lane-sub" text-anchor="middle">[Cobranza]</text>
+<path d="M 660 180 L 730 180 L 730 305 L 742 305" fill="none" stroke="#D97706" stroke-width="2.4" marker-end="url(#arrow-amber)"  stroke-linejoin="round" stroke-linecap="round" />
+
+        <g transform="translate(730,235)">
+          <rect x="-88.75" y="-11.0" width="177.5" height="22" rx="4" ry="4" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1" filter="url(#nodeShadow)" />
+          <text x="0" y="4" class="edge-label">Autoriza Cotización</text>
+        </g>
+        
+<path d="M 910 305 L 1002 305" fill="none" stroke="#2563EB" stroke-width="2.4" marker-end="url(#arrow-blue)"  stroke-linejoin="round" stroke-linecap="round" />
+<path d="M 1100 344 L 1100 435 L 1292 435" fill="none" stroke="#0D9488" stroke-width="2.4" marker-end="url(#arrow-teal)"  stroke-linejoin="round" stroke-linecap="round" />
+
+        <g transform="translate(1190,435)">
+          <rect x="-37.75" y="-11.0" width="75.5" height="22" rx="4" ry="4" fill="#F0FDFA" stroke="#0D9488" stroke-width="1" filter="url(#nodeShadow)" />
+          <text x="0" y="4" class="edge-label">Higiene</text>
+        </g>
+        
+<path d="M 1460 435 L 1572 435" fill="none" stroke="#0D9488" stroke-width="2.4" marker-end="url(#arrow-teal)"  stroke-linejoin="round" stroke-linecap="round" />
+<path d="M 1740 435 L 1872 435" fill="none" stroke="#0D9488" stroke-width="2.4" marker-end="url(#arrow-teal)"  stroke-linejoin="round" stroke-linecap="round" />
+<path d="M 2040 435 L 2120 435 L 2120 690 L 2182 690" fill="none" stroke="#059669" stroke-width="2.4" marker-end="url(#arrow-green)"  stroke-linejoin="round" stroke-linecap="round" />
+<path d="M 2350 690 L 2492 690" fill="none" stroke="#059669" stroke-width="2.4" marker-end="url(#arrow-green)"  stroke-linejoin="round" stroke-linecap="round" />
+<path d="M 2660 690 L 2802 690" fill="none" stroke="#059669" stroke-width="2.4" marker-end="url(#arrow-green)"  stroke-linejoin="round" stroke-linecap="round" />
+<path d="M 1660 464 L 1660 565 L 1867 565" fill="none" stroke="#0F766E" stroke-width="2.4" marker-end="url(#arrow-teal)"  stroke-linejoin="round" stroke-linecap="round" />
+
+        <g transform="translate(1760,565)">
+          <rect x="-67.5" y="-11.0" width="135.0" height="22" rx="4" ry="4" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1" filter="url(#nodeShadow)" />
+          <text x="0" y="4" class="edge-label">Hojas de Campo</text>
+        </g>
+        
+<path d="M 2045 565 L 2187 565" fill="none" stroke="#0F766E" stroke-width="2.4" marker-end="url(#arrow-teal)"  stroke-linejoin="round" stroke-linecap="round" />
+<path d="M 2270 529 L 2270 490 L 1700 490 L 1700 472" fill="none" stroke="#16A34A" stroke-width="2.2" marker-end="url(#arrow-green)"  stroke-linejoin="round" stroke-linecap="round" />
+
+        <g transform="translate(2270,508)">
+          <rect x="-16.5" y="-11.0" width="33.0" height="22" rx="4" ry="4" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1" filter="url(#nodeShadow)" />
+          <text x="0" y="4" class="edge-label-yes">Si</text>
+        </g>
+        
+<path d="M 2345 565 L 2497 565" fill="none" stroke="#DC2626" stroke-width="2.4" marker-end="url(#arrow-red)"  stroke-linejoin="round" stroke-linecap="round" />
+
+        <g transform="translate(2420,553)">
+          <rect x="-16.5" y="-11.0" width="33.0" height="22" rx="4" ry="4" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1" filter="url(#nodeShadow)" />
+          <text x="0" y="4" class="edge-label-no">No</text>
+        </g>
+        
+<path d="M 2655 565 L 2735 565 L 2735 775 L 3100 775 L 3100 805 L 3112 805" fill="none" stroke="#16A34A" stroke-width="2.2" marker-end="url(#arrow-green)"  stroke-linejoin="round" stroke-linecap="round" />
+
+        <g transform="translate(2700,553)">
+          <rect x="-16.5" y="-11.0" width="33.0" height="22" rx="4" ry="4" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1" filter="url(#nodeShadow)" />
+          <text x="0" y="4" class="edge-label-yes">Si</text>
+        </g>
+        
+<path d="M 2970 690 L 3050 690 L 3050 825 L 3112 825" fill="none" stroke="#7C3AED" stroke-width="2.4" marker-end="url(#arrow-purple)"  stroke-linejoin="round" stroke-linecap="round" />
+<path d="M 2890 719 L 2890 750 L 4230 750 L 4230 1418" fill="none" stroke="#2563EB" stroke-width="2" marker-end="url(#arrow-blue)" stroke-dasharray="6,4" stroke-linejoin="round" stroke-linecap="round" />
+
+        <g transform="translate(3350,750)">
+          <rect x="-110.0" y="-11.0" width="220.0" height="22" rx="4" ry="4" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1" filter="url(#nodeShadow)" />
+          <text x="0" y="4" class="edge-label">Resultados Higiene a PDF</text>
+        </g>
+        
+<path d="M 3280 815 L 3407 815" fill="none" stroke="#7C3AED" stroke-width="2.4" marker-end="url(#arrow-purple)"  stroke-linejoin="round" stroke-linecap="round" />
+<path d="M 3490 779 L 3490 515 L 1960 515 L 1960 528" fill="none" stroke="#16A34A" stroke-width="2.2" marker-end="url(#arrow-green)"  stroke-linejoin="round" stroke-linecap="round" />
+
+        <g transform="translate(3490,755)">
+          <rect x="-16.5" y="-11.0" width="33.0" height="22" rx="4" ry="4" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1" filter="url(#nodeShadow)" />
+          <text x="0" y="4" class="edge-label-yes">Si</text>
+        </g>
+        
+<path d="M 3565 815 L 3687 815" fill="none" stroke="#DC2626" stroke-width="2.4" marker-end="url(#arrow-red)"  stroke-linejoin="round" stroke-linecap="round" />
+
+        <g transform="translate(3625,803)">
+          <rect x="-16.5" y="-11.0" width="33.0" height="22" rx="4" ry="4" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1" filter="url(#nodeShadow)" />
+          <text x="0" y="4" class="edge-label-no">No</text>
+        </g>
+        
+<path d="M 3865 815 L 3960 815 L 3960 1445 L 3962 1445" fill="none" stroke="#1D4ED8" stroke-width="2.4" marker-end="url(#arrow-blue)"  stroke-linejoin="round" stroke-linecap="round" />
+<path d="M 1010 305 L 1000 305 L 1000 945 L 1292 945" fill="none" stroke="#16A34A" stroke-width="2.4" marker-end="url(#arrow-green)"  stroke-linejoin="round" stroke-linecap="round" />
+
+        <g transform="translate(1000,640)">
+          <rect x="-42.0" y="-11.0" width="84.0" height="22" rx="4" ry="4" fill="#F0FDF4" stroke="#16A34A" stroke-width="1" filter="url(#nodeShadow)" />
+          <text x="0" y="4" class="edge-label">Ecología</text>
+        </g>
+        
+<path d="M 1460 945 L 1572 945" fill="none" stroke="#16A34A" stroke-width="2.4" marker-end="url(#arrow-green)"  stroke-linejoin="round" stroke-linecap="round" />
+<path d="M 1740 945 L 1872 945" fill="none" stroke="#16A34A" stroke-width="2.4" marker-end="url(#arrow-green)"  stroke-linejoin="round" stroke-linecap="round" />
+<path d="M 2040 945 L 2120 945 L 2120 1200 L 2182 1200" fill="none" stroke="#10B981" stroke-width="2.4" marker-end="url(#arrow-green)"  stroke-linejoin="round" stroke-linecap="round" />
+<path d="M 2350 1200 L 2492 1200" fill="none" stroke="#10B981" stroke-width="2.4" marker-end="url(#arrow-green)"  stroke-linejoin="round" stroke-linecap="round" />
+<path d="M 2660 1200 L 2802 1200" fill="none" stroke="#10B981" stroke-width="2.4" marker-end="url(#arrow-green)"  stroke-linejoin="round" stroke-linecap="round" />
+<path d="M 1660 974 L 1660 1075 L 1867 1075" fill="none" stroke="#15803D" stroke-width="2.4" marker-end="url(#arrow-green)"  stroke-linejoin="round" stroke-linecap="round" />
+
+        <g transform="translate(1760,1075)">
+          <rect x="-67.5" y="-11.0" width="135.0" height="22" rx="4" ry="4" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1" filter="url(#nodeShadow)" />
+          <text x="0" y="4" class="edge-label">Hojas de Campo</text>
+        </g>
+        
+<path d="M 2045 1075 L 2187 1075" fill="none" stroke="#15803D" stroke-width="2.4" marker-end="url(#arrow-green)"  stroke-linejoin="round" stroke-linecap="round" />
+<path d="M 2270 1039 L 2270 1000 L 1700 1000 L 1700 982" fill="none" stroke="#16A34A" stroke-width="2.2" marker-end="url(#arrow-green)"  stroke-linejoin="round" stroke-linecap="round" />
+
+        <g transform="translate(2270,1018)">
+          <rect x="-16.5" y="-11.0" width="33.0" height="22" rx="4" ry="4" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1" filter="url(#nodeShadow)" />
+          <text x="0" y="4" class="edge-label-yes">Si</text>
+        </g>
+        
+<path d="M 2345 1075 L 2425 1075 L 2425 1285 L 3100 1285 L 3100 1315 L 3112 1315" fill="none" stroke="#DC2626" stroke-width="2.4" marker-end="url(#arrow-red)"  stroke-linejoin="round" stroke-linecap="round" />
+
+        <g transform="translate(2385,1063)">
+          <rect x="-16.5" y="-11.0" width="33.0" height="22" rx="4" ry="4" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1" filter="url(#nodeShadow)" />
+          <text x="0" y="4" class="edge-label-no">No</text>
+        </g>
+        
+<path d="M 2970 1200 L 3050 1200 L 3050 1335 L 3112 1335" fill="none" stroke="#9333EA" stroke-width="2.4" marker-end="url(#arrow-purple)"  stroke-linejoin="round" stroke-linecap="round" />
+<path d="M 2890 1229 L 2890 1260 L 4260 1260 L 4260 1418" fill="none" stroke="#2563EB" stroke-width="2" marker-end="url(#arrow-blue)" stroke-dasharray="6,4" stroke-linejoin="round" stroke-linecap="round" />
+
+        <g transform="translate(3350,1260)">
+          <rect x="-114.25" y="-11.0" width="228.5" height="22" rx="4" ry="4" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1" filter="url(#nodeShadow)" />
+          <text x="0" y="4" class="edge-label">Resultados Ecología a PDF</text>
+        </g>
+        
+<path d="M 3280 1325 L 3407 1325" fill="none" stroke="#9333EA" stroke-width="2.4" marker-end="url(#arrow-purple)"  stroke-linejoin="round" stroke-linecap="round" />
+<path d="M 3490 1289 L 3490 1025 L 1960 1025 L 1960 1038" fill="none" stroke="#16A34A" stroke-width="2.2" marker-end="url(#arrow-green)"  stroke-linejoin="round" stroke-linecap="round" />
+
+        <g transform="translate(3490,1265)">
+          <rect x="-16.5" y="-11.0" width="33.0" height="22" rx="4" ry="4" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1" filter="url(#nodeShadow)" />
+          <text x="0" y="4" class="edge-label-yes">Si</text>
+        </g>
+        
+<path d="M 3565 1325 L 3687 1325" fill="none" stroke="#DC2626" stroke-width="2.4" marker-end="url(#arrow-red)"  stroke-linejoin="round" stroke-linecap="round" />
+
+        <g transform="translate(3625,1313)">
+          <rect x="-16.5" y="-11.0" width="33.0" height="22" rx="4" ry="4" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1" filter="url(#nodeShadow)" />
+          <text x="0" y="4" class="edge-label-no">No</text>
+        </g>
+        
+<path d="M 3865 1325 L 3960 1325 L 3960 1465 L 3962 1465" fill="none" stroke="#1D4ED8" stroke-width="2.4" marker-end="url(#arrow-blue)"  stroke-linejoin="round" stroke-linecap="round" />
+<path d="M 4110 1455 L 4182 1455" fill="none" stroke="#1D4ED8" stroke-width="2.4" marker-end="url(#arrow-blue)"  stroke-linejoin="round" stroke-linecap="round" />
+<path d="M 4330 1455 L 4402 1455" fill="none" stroke="#1D4ED8" stroke-width="2.4" marker-end="url(#arrow-blue)"  stroke-linejoin="round" stroke-linecap="round" />
+<path d="M 4480 1484 L 4480 1546" fill="none" stroke="#E11D48" stroke-width="2.4" marker-end="url(#arrow-red)"  stroke-linejoin="round" stroke-linecap="round" />
+<rect x="500.0" y="151.0" width="160" height="58" rx="8" ry="8" fill="#FEF3C7" stroke="#D97706" stroke-width="2" filter="url(#shadow)" />
+<text x="580" y="177" class="node-text">Compras</text>
+<text x="580" y="195" class="node-subtext">Autoriza Cotización</text>
+<rect x="750.0" y="276.0" width="160" height="58" rx="8" ry="8" fill="#DBEAFE" stroke="#2563EB" stroke-width="2" filter="url(#shadow)" />
+<text x="830" y="302" class="node-text">Generar OT</text>
+<text x="830" y="320" class="node-subtext">Atención a Clientes</text>
+<polygon points="1100,266.0 1190.0,305 1100,344.0 1010.0,305" fill="#EFF6FF" stroke="#2563EB" stroke-width="2.2" filter="url(#shadow)" />
+<text x="1100" y="310" class="decision-text">¿Higiene o Ecología?</text>
+<rect x="1300.0" y="406.0" width="160" height="58" rx="8" ry="8" fill="#CCFBF1" stroke="#0D9488" stroke-width="2" filter="url(#shadow)" />
+<text x="1380" y="432" class="node-text">Muestrea</text>
+<text x="1380" y="450" class="node-subtext">Técnico Higiene</text>
+<rect x="1580.0" y="406.0" width="160" height="58" rx="8" ry="8" fill="#CCFBF1" stroke="#0D9488" stroke-width="2" filter="url(#shadow)" />
+<text x="1660" y="432" class="node-text">Hojas de Campo</text>
+<text x="1660" y="450" class="node-subtext">Registro de Campo</text>
+<rect x="1880.0" y="406.0" width="160" height="58" rx="8" ry="8" fill="#CCFBF1" stroke="#0D9488" stroke-width="2" filter="url(#shadow)" />
+<text x="1960" y="432" class="node-text">Envia Muestra</text>
+<text x="1960" y="450" class="node-subtext">A Laboratorio MX</text>
+<rect x="1875.0" y="536.0" width="170" height="58" rx="8" ry="8" fill="#99F6E4" stroke="#0F766E" stroke-width="2" filter="url(#shadow)" />
+<text x="1960" y="562" class="node-text">Revisa Hojas de Campo</text>
+<text x="1960" y="580" class="node-subtext">Coordinador Higiene</text>
+<polygon points="2270,529.0 2345.0,565 2270,601.0 2195.0,565" fill="#FEF08A" stroke="#CA8A04" stroke-width="2.2" filter="url(#shadow)" />
+<text x="2270" y="570" class="decision-text">¿Correcciones?</text>
+<polygon points="2580,529.0 2655.0,565 2580,601.0 2505.0,565" fill="#FEF08A" stroke="#CA8A04" stroke-width="2.2" filter="url(#shadow)" />
+<text x="2580" y="570" class="decision-text">¿Revisa MX?</text>
+<rect x="2190.0" y="661.0" width="160" height="58" rx="8" ry="8" fill="#DCFCE7" stroke="#059669" stroke-width="2" filter="url(#shadow)" />
+<text x="2270" y="687" class="node-text">Recibe Muestras</text>
+<text x="2270" y="705" class="node-subtext">Lab Higiene MX</text>
+<rect x="2500.0" y="661.0" width="160" height="58" rx="8" ry="8" fill="#DCFCE7" stroke="#059669" stroke-width="2" filter="url(#shadow)" />
+<text x="2580" y="687" class="node-text">Analiza Muestras</text>
+<text x="2580" y="705" class="node-subtext">Lab Higiene MX</text>
+<rect x="2810.0" y="661.0" width="160" height="58" rx="8" ry="8" fill="#DCFCE7" stroke="#059669" stroke-width="2" filter="url(#shadow)" />
+<text x="2890" y="687" class="node-text">Reporta Resultados</text>
+<text x="2890" y="705" class="node-subtext">Emisión Ensayos</text>
+<rect x="3120.0" y="786.0" width="160" height="58" rx="8" ry="8" fill="#EDE9FE" stroke="#7C3AED" stroke-width="2" filter="url(#shadow)" />
+<text x="3200" y="812" class="node-text">Revisa</text>
+<text x="3200" y="830" class="node-subtext">Revisión Higiene MX</text>
+<polygon points="3490,779.0 3565.0,815 3490,851.0 3415.0,815" fill="#FEF08A" stroke="#CA8A04" stroke-width="2.2" filter="url(#shadow)" />
+<text x="3490" y="820" class="decision-text">¿Correcciones?</text>
+<rect x="3695.0" y="786.0" width="170" height="58" rx="8" ry="8" fill="#DDD6FE" stroke="#6D28D9" stroke-width="2" filter="url(#shadow)" />
+<text x="3780" y="812" class="node-text">Genera Informe PDF</text>
+<text x="3780" y="830" class="node-subtext">Informe Higiene</text>
+<rect x="1300.0" y="916.0" width="160" height="58" rx="8" ry="8" fill="#DCFCE7" stroke="#16A34A" stroke-width="2" filter="url(#shadow)" />
+<text x="1380" y="942" class="node-text">Muestreas</text>
+<text x="1380" y="960" class="node-subtext">Técnico Ecología</text>
+<rect x="1580.0" y="916.0" width="160" height="58" rx="8" ry="8" fill="#DCFCE7" stroke="#16A34A" stroke-width="2" filter="url(#shadow)" />
+<text x="1660" y="942" class="node-text">Hojas de Campo</text>
+<text x="1660" y="960" class="node-subtext">Registro de Campo</text>
+<rect x="1880.0" y="916.0" width="160" height="58" rx="8" ry="8" fill="#DCFCE7" stroke="#16A34A" stroke-width="2" filter="url(#shadow)" />
+<text x="1960" y="942" class="node-text">Envia Muestra</text>
+<text x="1960" y="960" class="node-subtext">A Laboratorio MX</text>
+<rect x="1875.0" y="1046.0" width="170" height="58" rx="8" ry="8" fill="#BBF7D0" stroke="#15803D" stroke-width="2" filter="url(#shadow)" />
+<text x="1960" y="1072" class="node-text">Revisa Hojas de Campo</text>
+<text x="1960" y="1090" class="node-subtext">Coordinador Ecología</text>
+<polygon points="2270,1039.0 2345.0,1075 2270,1111.0 2195.0,1075" fill="#FEF08A" stroke="#CA8A04" stroke-width="2.2" filter="url(#shadow)" />
+<text x="2270" y="1080" class="decision-text">¿Correcciones?</text>
+<rect x="2190.0" y="1171.0" width="160" height="58" rx="8" ry="8" fill="#D1FAE5" stroke="#10B981" stroke-width="2" filter="url(#shadow)" />
+<text x="2270" y="1197" class="node-text">Recibe Muestras</text>
+<text x="2270" y="1215" class="node-subtext">Lab Ecología MX</text>
+<rect x="2500.0" y="1171.0" width="160" height="58" rx="8" ry="8" fill="#D1FAE5" stroke="#10B981" stroke-width="2" filter="url(#shadow)" />
+<text x="2580" y="1197" class="node-text">Analiza Muestras</text>
+<text x="2580" y="1215" class="node-subtext">Lab Ecología MX</text>
+<rect x="2810.0" y="1171.0" width="160" height="58" rx="8" ry="8" fill="#D1FAE5" stroke="#10B981" stroke-width="2" filter="url(#shadow)" />
+<text x="2890" y="1197" class="node-text">Reporta Resultados</text>
+<text x="2890" y="1215" class="node-subtext">Emisión Ensayos</text>
+<rect x="3120.0" y="1296.0" width="160" height="58" rx="8" ry="8" fill="#F3E8FF" stroke="#9333EA" stroke-width="2" filter="url(#shadow)" />
+<text x="3200" y="1322" class="node-text">Revisa</text>
+<text x="3200" y="1340" class="node-subtext">Revisión Ecología MX</text>
+<polygon points="3490,1289.0 3565.0,1325 3490,1361.0 3415.0,1325" fill="#FEF08A" stroke="#CA8A04" stroke-width="2.2" filter="url(#shadow)" />
+<text x="3490" y="1330" class="decision-text">¿Correcciones?</text>
+<rect x="3695.0" y="1296.0" width="170" height="58" rx="8" ry="8" fill="#E9D5FF" stroke="#7E22CE" stroke-width="2" filter="url(#shadow)" />
+<text x="3780" y="1322" class="node-text">Genera Informe PDF</text>
+<text x="3780" y="1340" class="node-subtext">Informe Ecología</text>
+<rect x="3970.0" y="1426.0" width="140" height="58" rx="8" ry="8" fill="#DBEAFE" stroke="#1D4ED8" stroke-width="2" filter="url(#shadow)" />
+<text x="4040" y="1452" class="node-text">Captura</text>
+<text x="4040" y="1470" class="node-subtext">Captura Local</text>
+<rect x="4190.0" y="1426.0" width="140" height="58" rx="8" ry="8" fill="#BFDBFE" stroke="#1D4ED8" stroke-width="2" filter="url(#shadow)" />
+<text x="4260" y="1452" class="node-text">Genera PDF</text>
+<text x="4260" y="1470" class="node-subtext">PDF Local</text>
+<rect x="4410.0" y="1426.0" width="140" height="58" rx="8" ry="8" fill="#93C5FD" stroke="#1E40AF" stroke-width="2" filter="url(#shadow)" />
+<text x="4480" y="1452" class="node-text">Impresión</text>
+<text x="4480" y="1470" class="node-subtext">Impresión Final</text>
+<rect x="4390.0" y="1554.0" width="180" height="52" rx="8" ry="8" fill="#FFE4E6" stroke="#E11D48" stroke-width="2" filter="url(#shadow)" />
+<text x="4480" y="1577" class="node-text">Cobranza y Facturación</text>
+<text x="4480" y="1595" class="node-subtext">Atn Ctes - Cobranza</text>
+</svg>
