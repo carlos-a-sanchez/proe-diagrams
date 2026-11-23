@@ -53,6 +53,26 @@ EOF
   --print-to-pdf=diagram.pdf /tmp/diagram_pdf.html
 ```
 
+### 4. (Opcional) Generar el archivo draw.io
+
+```bash
+python3 generate_drawio.py
+```
+
+Crea `diagram.drawio` (XML nativo de draw.io, editable en app.diagrams.net o draw.io Desktop). Los carriles son contenedores `swimlane` y los nodos son sus hijos, por lo que se mueven con el carril. El título y el subtítulo se leen de `OT-Laned-v2.md`. Para exportar desde la línea de comandos:
+
+```bash
+/Applications/draw.io.app/Contents/MacOS/draw.io -x -f png -b 20 -o diagram-drawio.png diagram.drawio
+```
+
+### 5. (Opcional) Versión vertical (draw.io)
+
+```bash
+python3 generate_vertical_drawio.py
+```
+
+Crea `vertical-diagram.drawio` con los carriles como columnas y el flujo de arriba hacia abajo. Reutiliza los datos de `generate_drawio.py` (nodos, conexiones, carriles), por lo que ambos archivos deben mantenerse en la misma carpeta.
+
 ### Todo en un solo comando
 
 ```bash

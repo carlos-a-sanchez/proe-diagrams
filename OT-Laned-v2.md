@@ -1,38 +1,64 @@
-# Ciclo de vide OT - 2026
+# Ciclo de Vida OT - 2026
 ## Diagrama de procesos: Emisión de OT, Muestreo y Reporte de Resultados
 
 ```mermaid
+
+---
+config:
+  htmlLabels: false
+---
+
 flowchart TD
 
     subgraph Cliente ["Cliente"]
         CteAutCot[Compras]
     end
 
-    subgraph AtnCte ["AtencionClientes"]
-        GenOT[Generar OT]
-        HigEcolEval{Higiene o Ecología?}
+    subgraph AtnCte ["Atención Clientes"]
+        GenOT["`Generar OT
+                _Folio OT_
+                _Fecha Planif Muestreo_`"]
+        HigEcolEval{¿Higiene o Ecología?}
     end
 
     subgraph OpeEco ["Operativo Ecología"]
         subgraph TecEco ["Técnico"]
-            TecEcoMues["Muestreas"]
-            TecEcoHojas["Hojas de Campo"]
-            TecEcoEnvMues["Envia Muestra"]
+        
+            TecEcoMues["`Muestrea
+                _Fecha Muestreo_`"]
+        
+            TecEcoHojas["`Captura Hojas de Campo
+                _Fecha Hojas Campo_`"]
+        
+            TecEcoEnvMues["`Envia Muestra
+                _Fecha Envio Muestra_`"]
+        
         end
         subgraph CorEco ["Coordinador Ecología"]
-            CordEcoRevisa["Revisa Hojas de Campo"]
+            CordEcoRevisa["`Revisa Hojas de Campo
+                _Fecha Revisión Hojas_`"]
             CordEcoEvalHojas{"Correciones?"}
         end
     end    
 
     subgraph OpeHig ["Operativo Higiene"]
         subgraph TecHig ["Técnico"]
-            TecHigMues[Muestrea]
-            TecHigHojas["Hojas de Campo"]
-            TecHigEnvMues["Envia Muestra"]
+
+            TecHigMues["`Muestrea
+                _Fecha Muestreo_`"]
+        
+            TecHigHojas["`Captura Hojas de Campo
+                _Fecha Hojas Campo_`"]
+        
+            TecHigEnvMues["`Envía Muestra
+                _Fecha Envío Muestra_`"]
+        
         end
+
         subgraph CorHig ["Coordinador Higiene"]
-            CordHigRevisa["Revisa Hojas de Campo"]
+            CordHigRevisa["`Revisa Hojas de Campo
+                _Fecha Revisión Hojas_`"]
+
             CordHigEvalHojas{"Correciones?"}
             CordHigEvalMX{"Revisa MX?"}
         end
@@ -68,15 +94,23 @@ flowchart TD
         CapLocGenImp["Impresión"]
     end
 
-    subgraph Cobranza ["Atn Ctes - Cobranza"]
-
+    subgraph Cobranza ["Atención Clientes - Cobranza"]
+        CobrCFDI["Genera CFDI"]
+        CobrEnvioPDF["Envia PDF/CFDI a Usuario"]
     end
 
+    subgraph Logistica ["Atención Clientes - Logística"]
+        LogAcopio["Acopio del Informe Impreso"]
+        LogEntrega["Entrega del Informe Impreso"]
+        LogEntregado["Informe Impreso Entregado"]
+    end
+    %% -- Connections across lanes ---
 
-
-    %% Connections across lanes
     CteAutCot[Compras] -->|Autoriza Cotización| GenOT
     GenOT --> HigEcolEval
+
+    %% -- Higiene Lane -------------
+
     HigEcolEval --> |Higiene| TecHigMues
     TecHigMues --> TecHigHojas
     TecHigHojas --> TecHigEnvMues
@@ -88,20 +122,43 @@ flowchart TD
 
     TecHigHojas --> |"Hojas de Campo"| CordHigRevisa 
     CordHigRevisa --> CordHigEvalHojas
-    CordHigEvalHojas -->|Si| TecHigHojas
 
-    CordHigEvalHojas -->|No| CordHigEvalMX
-    CordHigEvalMX --> |Si| CapHigMxRevisa
+    %% does the "Hojas de campo" need re-work? 
+
+    CordHigEvalHojas -->|"`Si
+                           _Fecha Revision HdC_
+                           _Marca Retrabajo_`"| TecHigHojas 
+
+    CordHigEvalHojas -->|"`No
+                           _Fecha Revisión HdC_`"| CordHigEvalMX
+
+    %% is this Service reviewd in MX?
+
+    CordHigEvalMX --> |"`No
+                           _Fecha Captura Local_
+                           _Aviso a Captura Local_`"| CapLocCaptura
+    
+    CordHigEvalMX --> |"`Si
+                           _Fecha Sol. Rev MX_`"| CapHigMxRevisa
 
     LabHigMXReporta --> CapHigMxRevisa
-    LabHigMXReporta --> CapLocGenPDF
+    LabHigMXReporta -->|"`_Fecha Lab.MX Libera Resultados_`"| CapLocGenPDF
 
     CapHigMxRevisa --> CapHigMxEval
 
-    CapHigMxEval -->|Si| CordHigRevisa
-    CapHigMxEval -->|No| CapHigMxGenInfPDF
-    CapHigMxGenInfPDF --> CapLocCaptura
+    %% does MX decide "Hojas de Campo" need re-work? 
 
+    CapHigMxEval -->|"`Si
+                        _Fecha Revisión MX_
+                        _Marca Retrabajo MX_`"| CordHigRevisa
+    CapHigMxEval -->|"`No
+                        _Fecha Revisión MX_`"| CapHigMxGenInfPDF
+
+    CapHigMxGenInfPDF -->|"`_Fecha MX Libera Informe PDF_
+                            _Aviso a Facturación CFDI_`"| CapLocGenPDF 
+
+
+    %% -- Ecología Lane -------------
 
     HigEcolEval --> |Ecología| TecEcoMues
     TecEcoMues --> TecEcoHojas
@@ -109,30 +166,64 @@ flowchart TD
     TecEcoEnvMues --> LabEcoMXRecMue  
     LabEcoMXRecMue --> LabEcoMXAnaliza
     LabEcoMXAnaliza --> LabEcoMXReporta
-    LabEcoMXReporta --> CapEcoMxRevisa
+    LabEcoMXReporta -->|"`_Fecha Lab.MX Libera Resultados_`"|  CapEcoMxRevisa
 
     LabEcoMXReporta --> CapLocGenPDF
 
     TecEcoHojas --> |"Hojas de Campo"| CordEcoRevisa 
     CordEcoRevisa --> CordEcoEvalHojas
-    CordEcoEvalHojas -->|Si| TecEcoHojas
 
-    CordEcoEvalHojas -->|No| CapEcoMxRevisa    
+    %% does the "Hojas de campo" need re-work? 
+
+    CordEcoEvalHojas -->|"`Si
+                           _Fecha Revision HdC_
+                           _Marca Retrabajo_`"| TecEcoHojas
+
+    CordEcoEvalHojas -->|"`No
+                           _Fecha Revisión HdC_`"| CapEcoMxRevisa    
 
     CapEcoMxRevisa --> CapEcoMxEval
 
-    CapEcoMxEval --> |No|CapEcoMxGenInfPDF
-    CapEcoMxGenInfPDF --> CapLocCaptura
+    %% does MX decide "Hojas de Campo" need re-work? 
 
-    CapEcoMxEval --> |Si| CordEcoRevisa
+    CapEcoMxEval --> |"`Si
+                          _Fecha Revisión MX_
+                          _Marca Retrabajo MX_`"| CordEcoRevisa    
+
+    CapEcoMxEval --> |"`No
+                           _Fecha Revisión MX_`"|CapEcoMxGenInfPDF
+
+    CapEcoMxGenInfPDF -->|"`_Fecha MX Libera Informe PDF_
+                            _Aviso a Facturación CFDI_`"| CapLocGenPDF
 
 
 
-    CapLocCaptura --> CapLocGenPDF
-    CapLocGenPDF --> CapLocGenImp
+    %% -- Local Capture Lane -------------
+
+    CapLocCaptura -->|"`_Fecha Genera PDF_
+                        _Aviso a Facturación CFDI_`"| CapLocGenPDF
+
+    CapLocGenPDF  -->|"`_Fecha PDF Listo para Impresión_
+                        _Aviso a Cobranza_`"| CapLocGenImp
 
  
+    %% -- Cobranza lane -------------
 
+    CapLocGenPDF -.-> |"`_Aviso a Cobranza_`"| CobrEnvioPDF
+    CapHigMxGenInfPDF -.-> |"`_Aviso a Facturación CFDI_`"| CobrCFDI
+    CapEcoMxGenInfPDF    -.-> |"`_Aviso a Facturación CFDI_`"| CobrCFDI
+
+    CobrCFDI --> CobrEnvioPDF
+
+
+    %% -- Logística lane -------------
+
+    CapLocGenImp -->|"`_Fecha Informe Impreso Listo_`"|  LogAcopio
+    LogAcopio -->|"`_Fecha Envío Informe Impreso_`"| LogEntrega
+    LogEntrega -->|"`_Fecha Acuse de Recibo_
+                     _Evidencia Informe Recibido_
+                     _OT Finalizada_`"| LogEntregado
+    
     
 
 ```
