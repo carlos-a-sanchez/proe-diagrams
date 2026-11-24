@@ -20,6 +20,7 @@ cd /Users/carlos.sanchez/no-sync-git/pre-diag
 | `generate_drawio.py` | `diagram.drawio` (carriles horizontales) | Título y subtítulo de `OT-Laned-v2.md`; nodos y flechas en el script |
 | `generate_vertical_drawio.py` | `vertical-diagram.drawio` (carriles verticales) | Importa los datos de `generate_drawio.py` |
 | `generate_lanes_v1_drawio.py` | `Ciclo vida OT - lanes v1 - 2016.drawio` | Coordenadas tomadas de la imagen `Ciclo vida OT - lanes v1 - 2016.png` |
+| `generate_prefactura_drawio.py` | `Ciclo de vida Prefactura - lanes v1.02.drawio` | Coordenadas tomadas de la imagen `Ciclo de vida Prefactura - lanes v1.02.png` |
 
 Los scripts no leen el Mermaid completo: solo el título (`# ...`) y el subtítulo (`## ...`). Los nodos, carriles y flechas están escritos dentro de cada script, así que si cambia el Mermaid hay que actualizarlos a mano.
 
@@ -102,6 +103,14 @@ python3 generate_lanes_v1_drawio.py
 ```
 
 Crea `Ciclo vida OT - lanes v1 - 2016.drawio`. Reproduce la imagen original con las mismas coordenadas en píxeles. Edite `LANES`, `NODES`, `NOTES` (notas amarillas) y `EDGES` para cambiar posiciones o textos.
+
+## 5. generate_prefactura_drawio.py (reproducción del ciclo de Prefactura)
+
+```bash
+python3 generate_prefactura_drawio.py
+```
+
+Crea `Ciclo de vida Prefactura - lanes v1.02.drawio`. Reproduce la imagen `Ciclo de vida Prefactura - lanes v1.02.png` con las mismas coordenadas en píxeles. Edite `LANES`, `NODES`, `NOTES` (notas amarillas) y `EDGES` para cambiar posiciones, textos o flechas. Las notas se dibujan fuera de los carriles para que las líneas de carril no las atraviesen.
 
 ## Exportar draw.io a PNG o PDF
 
